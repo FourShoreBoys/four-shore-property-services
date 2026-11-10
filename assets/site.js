@@ -153,7 +153,7 @@ function initialize(){
    const items=figures.map(figure=>{
     const image=figure.querySelector('img');
     const label=figure.querySelector('figcaption');
-    return {src:image.getAttribute('src'),alt:image.getAttribute('alt')||'Project photo',caption:label?label.textContent.trim():'Job 1 photo'};
+    return {src:image.getAttribute('src'),alt:image.getAttribute('alt')||'Project photo',caption:label?(label.firstChild&&label.firstChild.textContent?label.firstChild.textContent.trim():label.textContent.trim()):'Job 1 photo'};
    });
    const dialog=document.createElement('dialog');
    dialog.className='experience-lightbox';
@@ -188,6 +188,9 @@ function initialize(){
     if(event.key==='ArrowRight'){event.preventDefault();show(current+1);}
     else if(event.key==='ArrowLeft'){event.preventDefault();show(current-1);}
    });
+   let swipeX=null;
+   big.addEventListener('touchstart',event=>{if(event.touches.length===1)swipeX=event.touches[0].clientX;},{passive:true});
+   big.addEventListener('touchend',event=>{if(swipeX===null)return;const delta=event.changedTouches[0].clientX-swipeX;swipeX=null;if(Math.abs(delta)>55)show(current+(delta<0?1:-1));},{passive:true});
    dialog.addEventListener('close',()=>{big.removeAttribute('src');if(lastFocus)lastFocus.focus();});
   }
  }
