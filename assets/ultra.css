@@ -292,3 +292,36 @@ html.motion-paused .ultra-site .nav{animation:none!important}
  .ultra-command-display{background:#f2f4f1!important;border:1px solid #444}
  .ultra-season-pane>img{opacity:.35!important}
 }
+
+
+/* Desktop typography refinement: smaller, lighter, more modern headings. */
+@media (min-width: 981px){
+ .ultra-site h1.kin-hero-headline{font-weight:600}
+ .ultra-site .kin-hero-headline .kin-line{
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-weight:600;font-size:clamp(76px,10vw,154px);
+  line-height:.98;letter-spacing:-.065em;
+ }
+ .ultra-site .kin-hero-headline .kin-line-two{margin-top:12px;margin-left:clamp(0px,1.2vw,20px)}
+ .ultra-site .kin-hero{min-height:clamp(650px,88svh,920px)}
+ .ultra-site .kin-intro h2,
+ .ultra-site .kin-services-header h2,
+ .ultra-site .kin-project h2,
+ .ultra-site .kin-crew h2,
+ .ultra-site .kin-process h2,
+ .ultra-site .kin-service-name,
+ .ultra-site .kinetic-site .quote h2{
+  font-family:'Space Grotesk',Arial,sans-serif;font-weight:600;
+  letter-spacing:-.055em;line-height:1.04;
+ }
+ .ultra-site .kin-intro h2{font-size:clamp(54px,6.2vw,94px)}
+ .ultra-site .kin-services-header h2,
+ .ultra-site .kin-process h2{font-size:clamp(58px,7vw,105px)}
+ .ultra-site .kin-project h2{font-size:clamp(55px,6.5vw,98px)}
+ .ultra-site .kin-crew h2{font-size:clamp(57px,6.8vw,102px)}
+ .ultra-site .kin-service-name{font-size:clamp(46px,5.2vw,78px)}
+ .ultra-site .quote h2{font-family:'Space Grotesk',Arial,sans-serif;font-weight:600;font-size:clamp(56px,6.7vw,104px);line-height:1.05}
+ .ultra-command h2{font:600 clamp(55px,6.4vw,98px)/1.04 'Space Grotesk',Arial,sans-serif;letter-spacing:-.06em}
+ .ultra-pane-caption h3{font:600 clamp(60px,6.7vw,105px)/1 'Space Grotesk',Arial,sans-serif;letter-spacing:-.06em}
+ .ultra-season-nav button{font-family:'Space Grotesk',Arial,sans-serif;font-weight:600;font-size:clamp(20px,2vw,30px)}
+}
