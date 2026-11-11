@@ -71,6 +71,25 @@ const start=()=>{
  const visibility=()=>root.classList.toggle('kin-background-paused',document.hidden);
  document.addEventListener('visibilitychange',visibility);
  visibility();
+
+ // A floating shortcut appears only when the quote form is out of view.
+ const quote=document.getElementById('quote');
+ if(quote){
+  const shortcut=document.createElement('a');shortcut.className='kin-floating-quote';shortcut.href='#quote';shortcut.innerHTML='<span>GET A FREE QUOTE</span><b aria-hidden="true">↗</b>';
+  shortcut.setAttribute('aria-label','Jump to the free quote form');
+  document.body.append(shortcut);
+  let scrollQueued=false;
+  const onScroll=()=>{
+   const formTop=quote.getBoundingClientRect().top;
+   const formBottom=quote.getBoundingClientRect().bottom;
+   shortcut.classList.toggle('is-shown',scrollY>640&&!(formTop<innerHeight*.82&&formBottom>50));
+   document.body.classList.toggle('kin-scrolled',scrollY>70);
+   scrollQueued=false;
+  };
+  addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(onScroll)}},{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+  onScroll();
+ }
  // Gently close mobile navigation after selecting a route on any page.
  const nav=document.getElementById('site-navigation'),button=document.querySelector('.menu');
  if(nav&&button)nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
