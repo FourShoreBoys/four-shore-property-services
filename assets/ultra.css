@@ -245,3 +245,50 @@ html{scroll-padding-top:90px}
 @media(hover:none){.ultra-site .kin-project-gallery a,.ultra-site .kin-crew-graphic{transform:none!important}}
 @media(prefers-reduced-motion:reduce){.ultra-holo-ring,.ultra-hero-lines i,.ultra-scanline,.ultra-season-pane,.ultra-season-pane>img{animation:none!important}.ultra-site .kin-project-gallery a,.ultra-site .kin-crew-graphic{transition:none!important}.ultra-rail{transition:none!important}}
 html.motion-paused .ultra-holo-ring,html.motion-paused .ultra-hero-lines i,html.motion-paused .ultra-scanline,html.motion-paused .ultra-season-pane,html.motion-paused .ultra-season-pane>img{animation:none!important}
+
+
+/* Finishing: a navigation that feels like a designed mobile experience, not a dropdown */
+.ultra-site .kin-cursor{background:linear-gradient(130deg,var(--ultra-cyan),var(--ultra-volt));box-shadow:0 0 40px rgba(83,223,244,.34),0 15px 40px rgba(0,0,0,.32);border:1px solid #ffffff69}
+.ultra-site .kin-marquee{background:linear-gradient(95deg,#d9ff52,#91ffb2 48%,#6ae7f6);border-color:#050d10}
+.ultra-site .kin-marquee b{color:#288e8e}
+.ultra-site .kin-services .kin-service-image{border:1px solid rgba(105,240,251,.35)}
+.ultra-site .kin-project .kin-project-small-stack a span{background:rgba(3,16,22,.84);backdrop-filter:blur(15px);border:1px solid rgba(105,240,251,.3);color:#b5fcf8}
+.ultra-site .kin-crew-graphic-label{letter-spacing:.13em;color:#9adadd}
+.ultra-site .kin-crew-graphic:after{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 20deg,transparent 0deg 40deg,rgba(101,237,243,.018) 40deg 41deg,transparent 42deg 80deg);pointer-events:none;z-index:-1}
+.ultra-site .kin-process-grid h3{font-weight:900}
+.ultra-site .kin-process-grid p{color:#416062}
+.ultra-site .form .field input:focus,.ultra-site .form .field textarea:focus,.ultra-site .form .field select:focus{border-color:#3bd4e7;box-shadow:0 0 0 3px rgba(96,233,248,.13)}
+.ultra-site .form .field input,.ultra-site .form .field textarea,.ultra-site .form .field select{transition:border .2s,box-shadow .2s}
+.ultra-site .form .form-msg{color:#526c65}
+.ultra-site .experience-lightbox{border-color:#5fe4f5}
+.ultra-site .experience-lightbox-control{background:#0b1d23;color:#a2f0f4}
+@media(max-width:830px){
+ .ultra-site .header{isolation:isolate}
+ .ultra-site .nav{position:absolute;left:12px;right:12px;top:100%;max-height:calc(100svh - 112px);overflow-y:auto;overscroll-behavior:contain;padding:22px clamp(20px,5vw,45px) 29px;background:radial-gradient(ellipse at 100% 0%,rgba(50,183,199,.16),transparent 59%),linear-gradient(135deg,#0b2028,#041014);border:1px solid rgba(100,229,245,.43);box-shadow:0 25px 90px rgba(0,0,0,.62),0 0 80px rgba(61,219,228,.11);gap:0;counter-reset:mobile-links;animation:ultraMenuIn .32s cubic-bezier(.16,1,.3,1)}
+ .ultra-site .nav:before{content:"FOUR SHORE // NAVIGATION";font:700 10px 'Space Mono';color:#6ec8d5;letter-spacing:.13em;border-bottom:1px solid rgba(117,225,234,.22);padding-bottom:17px;display:block;margin-bottom:9px}
+ .ultra-site .nav>a:not(.btn){display:flex;align-items:center;font:900 clamp(36px,7.5vw,63px)/1 'Barlow Condensed';color:#e9f8f7;letter-spacing:-.03em;text-transform:uppercase;padding:10px 0;border-bottom:1px solid rgba(124,220,227,.19);white-space:normal}
+ .ultra-site .nav>a:not(.btn):before{counter-increment:mobile-links;content:"0" counter(mobile-links);font:700 10px 'Space Mono';letter-spacing:0;color:#79dce1;margin-right:16px;align-self:center}
+ .ultra-site .nav>a:not(.btn):after{display:none}
+ .ultra-site .nav>a:not(.btn):hover,.ultra-site .nav>a[aria-current=page]{color:var(--ultra-volt);box-shadow:none}
+ .ultra-site .nav .btn{margin-top:23px;padding:17px 20px;font-size:12px;transform:none}
+ .ultra-site .nav .btn:hover{transform:none}
+ .ultra-site .menu{border:1px solid rgba(112,225,239,.52);color:var(--ultra-cyan);background:rgba(103,234,255,.09);font:700 23px 'Space Grotesk';min-width:48px;min-height:46px}
+ .ultra-site .menu:hover{background:rgba(103,234,255,.19)}
+}
+@keyframes ultraMenuIn{from{opacity:0;transform:translateY(-12px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@media(max-width:650px){
+ .ultra-site .kin-project-gallery a{box-shadow:0 10px 25px rgba(15,67,57,.13)}
+ .ultra-site .kin-project-gallery a:hover{box-shadow:0 14px 32px rgba(15,67,57,.2)}
+ .ultra-site .nav>a:not(.btn){font-size:clamp(40px,10vw,60px)}
+ .ultra-site .ultra-command .ultra-command-footer{flex-wrap:wrap}
+ .ultra-site .kin-hero-copy p{text-wrap:pretty}
+}
+@media(prefers-reduced-motion:reduce){.ultra-site .nav{animation:none!important}}
+html.motion-paused .ultra-site .nav{animation:none!important}
+@media print{
+ .ultra-field,.ultra-hero-lines,.ultra-holo,.ultra-rail,.ultra-scanline,.experience-motion-toggle,.kin-floating-quote{display:none!important}
+ .ultra-site .kin-fade{opacity:1!important;filter:none!important;transform:none!important}
+ .ultra-site,.kinetic-main,.ultra-command,.kin-hero,.kin-crew,.kin-services,.quote{background:white!important;color:black!important}
+ .ultra-command-display{background:#f2f4f1!important;border:1px solid #444}
+ .ultra-season-pane>img{opacity:.35!important}
+}
