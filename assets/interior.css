@@ -625,3 +625,16 @@ html.motion-paused .interior-site .section .photo img{translate:none!important;t
   font-size:clamp(32px,3.6vw,54px)!important;line-height:1.1!important;
  }
 }
+
+
+/* Compact desktop type — intentional smaller hierarchy across every page. */
+@media(min-width:981px){
+ .interior-site .interior-hero h1{font-size:clamp(46px,5.2vw,82px)!important;font-weight:500!important;line-height:1.13!important;letter-spacing:-.05em!important}
+ .interior-site .interior-main>.section h2,.interior-site .interior-main>.section .large{font-size:clamp(37px,3.9vw,62px)!important;font-weight:500!important;line-height:1.16!important}
+ .interior-site .season h2{font-size:clamp(36px,3.8vw,59px)!important;font-weight:500!important}
+ .interior-site .quote h2{font-family:'Space Grotesk',Arial,sans-serif!important;font-size:clamp(40px,4.5vw,70px)!important;font-weight:500!important;line-height:1.14!important}
+ .interior-site .section .job h3{font-size:clamp(21px,1.8vw,29px)!important}
+ .interior-site .section .person h3{font-size:clamp(29px,2.7vw,40px)!important}
+ .interior-site[data-interior-page="gallery"] .interior-main>.section>.wrap>h2{font-size:clamp(38px,4.2vw,65px)!important;font-weight:500!important}
+ .interior-site[data-interior-page="gallery"] .section .wrap>details>summary{font-size:clamp(26px,3vw,43px)!important;font-weight:500!important}
+}
