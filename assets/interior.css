@@ -559,3 +559,32 @@ html.motion-paused .interior-site .person .avatar::after{animation:none!importan
  .interior-hero-grid,.interior-hero-bloom,.interior-hero-arc,.interior-hero-label{display:none!important}
  .interior-site .interior-main>.section,.interior-site .quote,.interior-site .form{background:white!important;color:black!important}
 }
+
+
+/* Finish the interactive details without touching the written content. */
+.interior-site .section article.job[hidden],.interior-site .section section.season[hidden]{
+  display:none!important;
+}
+.interior-site .section .person{
+  background:
+    radial-gradient(circle at var(--crew-x,70%) var(--crew-y,10%),rgba(75,219,226,.18),transparent 63%),
+    linear-gradient(150deg,#112d38,#071b27);
+}
+.interior-site .section .photo img{
+  translate:var(--photo-x,0px) var(--photo-y,0px);
+  transition:transform .9s,filter .55s,translate .25s ease-out;
+}
+.interior-site .section .photo::after{
+  content:"4S / ON THE JOB";position:absolute;bottom:18px;left:18px;z-index:2;
+  font:700 10px 'Space Mono';color:#e3fcf5;
+  background:rgba(5,23,31,.76);padding:9px 12px;
+  border:1px solid rgba(126,235,244,.36);backdrop-filter:blur(12px);
+  pointer-events:none;
+}
+.interior-site .section .heading h2{margin-bottom:12px}
+.interior-site .quote .form h3{font:900 clamp(40px,4vw,57px)/.95 'Barlow Condensed';letter-spacing:-.02em}
+.interior-site .gallery figure button:focus-visible{outline:2px solid #7bf1fc;outline-offset:-4px}
+@media(prefers-reduced-motion:reduce){
+ .interior-site .section .photo img{translate:none!important;transition:none!important}
+}
+html.motion-paused .interior-site .section .photo img{translate:none!important;transition:none!important}
